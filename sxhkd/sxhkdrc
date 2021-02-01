@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty 
+	st
 
 #super + shift + Return
 #	kitty -e fish
@@ -19,7 +19,7 @@ super + e
   thunar 
 
 super + v
-  alacritty -e nvim
+  st -e nvim
 
 super + z
   zathura

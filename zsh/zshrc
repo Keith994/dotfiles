@@ -56,7 +56,7 @@ plugins=(
 	wd
 	# zsh-autosuggestions
 	# zsh-syntax-highlighting
-	# sudo
+	sudo
 )
 
 #
