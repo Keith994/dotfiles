@@ -15,6 +15,7 @@ wmname LG3D
 
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9 
 
+bspc config automatic_scheme spiral
 bspc config border_width         2
 bspc config window_gap           5
 bspc config focus_follows_pointer false
@@ -36,6 +37,7 @@ unclutter --ignore-scrooling &
 bspc rule -a Chromium desktop='^3' follow=on
 bspc rule -a netease-cloud-music state=floating
 bspc rule -a Nitrogen state=floating
+bspc rule -a 微信 state=floating
 bspc rule -a Emacs desktop='^2' state=tiled follow=on
 #bspc rule -a Thunar state=floating
 bspc rule -a code-oss desktop='^2' follow=on
