@@ -1,4 +1,4 @@
 #!/bin/env sh
 
-bspc query -T -d ^3 > ~/12.txt
+bspc query -T -d ^1 > ~/12.txt
 

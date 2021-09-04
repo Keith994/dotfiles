@@ -63,7 +63,7 @@ ctrl + Escape
     sh ~/.config/polybar/modules/bsp.sh
 
 super + c
-    chromium
+    microsoft-edge-dev
 
 super + shift + m
     netease-cloud-music
@@ -106,7 +106,7 @@ Print
 	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
 	
 # Take a screenshot in 5 second
-alt + Print	
+super + Print	
 	scrot -d 3 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
 
 control + Print

@@ -13,13 +13,13 @@ case $chosen in
 	archlinux-java	status
 		;;
 	"14")
-	#	echo 14
-	sudo	archlinux-java set java-14-openjdk
+	#	echo 15
+	sudo	archlinux-java set java-14-j9
 	archlinux-java	status
 		;;
 	"8")
 #		echo 8
-	sudo	archlinux-java set java-8-openjdk/jre
+	sudo	archlinux-java set java-8-jre/jre
 	archlinux-java	status
 		;;
 esac

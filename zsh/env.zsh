@@ -18,4 +18,4 @@ export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export RANGER_LOAD_DEFAULT_RC="false"
 export TERM=xterm-256color
 export TERM_ITALICS=true
-
+export PATH="$PATH:/home/keith/.dotnet/tools"

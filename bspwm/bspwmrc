@@ -11,11 +11,11 @@ flameshot &
 qv2ray &
 mpd &
 feh --bg-scale $HOME/Pictures/wallpapers/wallpaper.png &
-wmname LG3D
+# wmname LG3D
 
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9 
 
-bspc config automatic_scheme spiral
+# bspc config automatic_scheme spiral
 bspc config border_width         2
 bspc config window_gap           5
 bspc config focus_follows_pointer false
@@ -45,7 +45,7 @@ bspc rule -a mpv state=floating
 bspc rule -a XMind desktop='^5' follow=on
 bspc rule -a feh state=floating
 bspc rule -a Steam state=floating
-bspc rule -a xdman-Main state=floating
+bspc rule -a java-lang-Thread state=floating
 bspc rule -a qv2ray state=floating desktop='^5'
 bspc rule -a Transmission-gtk state=floating
 bspc rule -a jetbrains-studio state=floating
@@ -57,3 +57,7 @@ bspc rule -a qemu state=floating
 bspc rule -a Android_Studio state=floating
 bspc rule -a jetbrains-idea-ce state=floating
 bspc rule -a kdeconnect.app state=floating desktop='^5'
+bspc rule -a Wps state=pseudo_tiled desktop='^2'
+bspc rule -a Wpspdf state=pseudo_tiled desktop='^2'
+bspc rule -a QtCreator state=floating
+bspc rule -a nutstore state=floating
