@@ -20,7 +20,7 @@ STATUS="$(nmcli radio wifi)"
 active=""
 urgent=""
 
-if (ping -c 1 baidu.com || ping -c 1 huya.com || ping -c 1 douyu.com) &>/dev/null; then
+if (ping -c 1 archlinux.org || ping -c 1 google.com || ping -c 1 bitbucket.org || ping -c 1 github.com || ping -c 1 sourceforge.net) &>/dev/null; then
 	if [[ $STATUS == *"enable"* ]]; then
         if [[ $IFACE == e* ]]; then
             connected=""
@@ -29,7 +29,7 @@ if (ping -c 1 baidu.com || ping -c 1 huya.com || ping -c 1 douyu.com) &>/dev/nul
         fi
 	active="-a 0"
 	SSID="﬉ $(iwgetid -r)"
-	#PIP="$(proxychains wget --timeout=30 http://ipinfo.io/ip -qO -)"
+	PIP="$(wget --timeout=30 http://ipinfo.io/ip -qO -)"
 	fi
 else
     urgent="-u 0"
@@ -56,10 +56,10 @@ case $chosen in
 		fi 
         ;;
     $bmon)
-        alacritty -e bmon
+        termite -e bmon
         ;;
     $launch_cli)
-        alacritty -e nmtui
+        termite -e nmtui
         ;;
     $launch)
         nm-connection-editor

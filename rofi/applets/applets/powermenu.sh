@@ -11,8 +11,8 @@ dir="$HOME/.config/rofi/applets/applets/configs/$style"
 rofi_command="rofi -theme $dir/powermenu.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
-cpu=$(sh ~/.config/rofi/bin/usedcpu)
-memory=$(sh ~/.config/rofi/bin/usedram)
+cpu=$($HOME/.config/rofi/bin/usedcpu)
+memory=$($HOME/.config/rofi/bin/usedram)
 
 # Options
 shutdown=""
@@ -61,8 +61,8 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/lock ]]; then
-			lock
+		if [[ -f /usr/bin/i3lock ]]; then
+			i3lock
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
 		fi

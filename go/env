@@ -1,0 +1,2 @@
+GOBIN=/home/keith/.go/bin
+GOPROXY=https://goproxy.cn,direct

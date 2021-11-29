@@ -5,3 +5,4 @@ export XMODIFIERS="@im=fcitx"
 export XDG_CONFIG_HOME=~/.config
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+libinput-gestures-setup start

@@ -4,20 +4,28 @@ fcitx &
 picom -b
 sh ~/.config/polybar/launch.sh &
 dunst &
-xautolock -time 30 -locker '/usr/bin/lock' &
+xautolock -time 30 -locker /usr/bin/i3lock-fancy &
 xsetroot -cursor_name left_ptr
 copyq &
 flameshot &
 qv2ray &
-mpd &
-feh --bg-scale $HOME/Pictures/wallpapers/wallpaper.png &
-# wmname LG3D
+#mpd &
+feh --bg-scale ~/Pictures/wallpapper.png &
+wmname LG3D
 
-bspc monitor -d 0 1 2 3 4 5 6 7 8 9 
+# run the xrandr command if an external monitor is connected to the
+# laptop.  This must be executed before the polybar command, so that
+# polybar can set the two separate bars properly.
+if [ -x ~/.config/scripts/bspwm_laptop_dual_monitor ];
+then
+    sh ~/.config//bspwm_laptop_dual_monitor
+else
+    bspc monitor eDP1  -d 0 1 2 3 4 5 6 7 8 9
+fi
 
 # bspc config automatic_scheme spiral
 bspc config border_width         2
-bspc config window_gap           5
+bspc config window_gap           2
 bspc config focus_follows_pointer false
 bspc config pointer_follows_focus true
 bspc config ignore_ewmh_focus true
@@ -34,30 +42,23 @@ bspc config gapless_monocle      true
 bspc config paddingless_monocle      true
 unclutter --ignore-scrooling &
 
-bspc rule -a Chromium desktop='^3' follow=on
-bspc rule -a netease-cloud-music state=floating
+bspc rule -a netease-cloud-music desktop='^4'
 bspc rule -a Nitrogen state=floating
 bspc rule -a 微信 state=floating
 bspc rule -a Emacs desktop='^2' state=tiled follow=on
-#bspc rule -a Thunar state=floating
-bspc rule -a code-oss desktop='^2' follow=on
 bspc rule -a mpv state=floating
-bspc rule -a XMind desktop='^5' follow=on
+bspc rule -a XMind desktop='^4' follow=on
 bspc rule -a feh state=floating
 bspc rule -a Steam state=floating
 bspc rule -a java-lang-Thread state=floating
-bspc rule -a qv2ray state=floating desktop='^5'
+#bspc rule -a qv2ray state=floating desktop='^4'
 bspc rule -a Transmission-gtk state=floating
-bspc rule -a jetbrains-studio state=floating
 bspc rule -a android-studio state=floating
 bspc rule -a sun-awt-X11-XFramePeer state=floating
 bspc rule -a Qemu-system-x86_64 state=floating
 bspc rule -a Emulator state=floating
-bspc rule -a qemu state=floating
 bspc rule -a Android_Studio state=floating
-bspc rule -a jetbrains-idea-ce state=floating
 bspc rule -a kdeconnect.app state=floating desktop='^5'
 bspc rule -a Wps state=pseudo_tiled desktop='^2'
 bspc rule -a Wpspdf state=pseudo_tiled desktop='^2'
-bspc rule -a QtCreator state=floating
-bspc rule -a nutstore state=floating
+#bspc rule -a nutstore state=floating

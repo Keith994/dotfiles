@@ -9,6 +9,9 @@ super + Return
 #super + shift + Return
 #	kitty -e fish
 
+super + r
+  rofi -show run
+
 super + w
   emacs
 
@@ -16,7 +19,7 @@ super + a
   sh ~/.config/rofi/bin/launcher_blurry_full
 
 super + e
-  thunar 
+  nautilus 
 
 super + v
   st -e nvim
@@ -32,7 +35,7 @@ super + space
   sh ~/.config/rofi/bin/launcher_misc
 
 super + d
-  rofi -show window -modi window -theme .config/rofi/launchers/misc/row_dock
+  rofi -show window
 
 #super + shift + d
 #    dmenu_run -fn 'xos JetBrainsMono:size=12' -sb '#88C0D0' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E'
@@ -53,20 +56,11 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#super + shift + n
-#	thunar
-
-#super + n
-#    nmd
-
 ctrl + Escape
     sh ~/.config/polybar/modules/bsp.sh
 
 super + c
     microsoft-edge-dev
-
-super + shift + m
-    netease-cloud-music
 
 super + shift + s
     flameshot gui
@@ -76,22 +70,19 @@ super + shift + s
 
 
 XF86AudioRaiseVolume
-    pactl set-sink-volume 1 +3%
+    pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +3%
 
 XF86AudioLowerVolume
-    pactl set-sink-volume 1 -3%
+    pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -3% 
 
 XF86AudioMute
-    pactl set-sink-mute 1 toggle
+    pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle 
 
-#XF86AudioPlay
-#    playerctl play-pause
+XF86MonBrightnessDown
+ xbacklight -10
 
-#XF86AudioNext
-#    playerctl next
-
-#XF86AudioPrev
-#    playerctl previous
+XF86MonBrightnessUp
+ xbacklight +10
 
 super + control + p
     mpc toggle
@@ -111,13 +102,6 @@ super + Print
 
 control + Print
     scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
-
-# Brighness control
-#XF86MonBrightnessUp
-#    light -A 5
-#XF86MonBrightnessDown
-#	light -U 5
-	
 
 #
 # bspwm hotkeys
@@ -154,6 +138,9 @@ super + g
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+F12
+  bspc node -t fullscreen
+
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
@@ -175,8 +162,9 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
+# bspc desktop -f {prev,next}.local
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+	bspc desktop -f {prev,next}
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -250,4 +238,7 @@ alt + p
 #    sh ~/.config/bspwm/scripts/start_ides.sh {code, idea, clion, pycharm, webstorm, datagrip, phpstorm, android, rider, goland}
 
 alt + control + Delete
-    lock
+    i3lock-fancy
+
+F1
+  flameshot gui

@@ -27,7 +27,9 @@ options="$terminal\n$files\n$editor\n$browser\n$music\n$settings"
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
     $terminal)
-		if [[ -f /usr/bin/termite ]]; then
+		if [[ -f /usr/local/bin/st ]]; then
+			st &
+		elif [[ -f /usr/bin/termite ]]; then
 			termite &
 		elif [[ -f /usr/bin/urxvt ]]; then
 			urxvt &
@@ -44,8 +46,8 @@ case $chosen in
 		fi
         ;;
     $files)
-		if [[ -f /usr/bin/thunar ]]; then
-			thunar &
+		if [[ -f /usr/bin/nautilus ]]; then
+			nautilus &
 		elif [[ -f /usr/bin/pcmanfm ]]; then
 			pcmanfm &
 		else
@@ -70,15 +72,15 @@ case $chosen in
 			firefox &
 		elif [[ -f /usr/bin/chromium ]]; then
 			chromium &
-		elif [[ -f /usr/bin/midori ]]; then
-			midori &
+		elif [[ -f /usr/bin/microsoft-edge-dev ]]; then
+			microsoft-edge-dev &
 		else
 			msg "No suitable web browser found!"
 		fi
         ;;
     $music)
-		if [[ -f /usr/bin/lxmusic ]]; then
-			lxmusic &
+		if [[ -f /usr/bin/netease-cloud-music ]]; then
+			netease-cloud-music &
 		else
 			msg "No suitable music player found!"
 		fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# set up the two monitors for bspwm
+# NOTE This is a simplistic approach because I already know the settings I
+# want to apply.
+my_laptop_external_monitor=$(xrandr --query | grep 'HDMI1')
+ xrandr --dpi 100
+if [[ $my_laptop_external_monitor != *disconnected* ]]; then
+    xrandr --output eDP1 --primary --mode 1920x1080 --rotate normal --output HDMI1 --mode 2560x1440 --rotate normal --right-of eDP1
+    bspc monitor eDP1  -d 0 1 2 3 4 
+    bspc monitor HDMI1 -d 5 6 7 8 9
+else
+    bspc monitor eDP1  -d 0 1 2 3 4 5 6 7 8 9
+fi
+
+sh ~/.config/polybar/launch.sh &
