@@ -1,0 +1,11 @@
+package archlinux
+package extract
+package fasd
+package neovim
+package sudope
+package thefuck
+package wd
+theme agnoster
+theme ays
+theme default
+theme lambda

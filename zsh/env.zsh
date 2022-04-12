@@ -19,3 +19,4 @@ export RANGER_LOAD_DEFAULT_RC="false"
 export TERM=xterm-256color
 export TERM_ITALICS=true
 export PATH="$PATH:/home/keith/.dotnet/tools"
+export GLFW_IM_MODULE=ibus

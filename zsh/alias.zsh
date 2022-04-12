@@ -24,4 +24,5 @@ alias fcplugin='flutter create --template=plugin --project-name'
 alias frunh='flutter run -d CSX' #华为手机
 alias cdiff='colordiff'
 alias ex='exit'
-
+alias reboot='sync & reboot'
+alias la='lazygit'

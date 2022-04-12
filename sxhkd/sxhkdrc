@@ -19,7 +19,7 @@ super + a
   sh ~/.config/rofi/bin/launcher_blurry_full
 
 super + e
-  nautilus 
+  nautilus
 
 super + v
   st -e nvim
@@ -73,10 +73,10 @@ XF86AudioRaiseVolume
     pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +3%
 
 XF86AudioLowerVolume
-    pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -3% 
+    pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -3%
 
 XF86AudioMute
-    pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle 
+    pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
 
 XF86MonBrightnessDown
  xbacklight -10
@@ -95,9 +95,9 @@ super + control + Left
 
 Print
 	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
-	
+
 # Take a screenshot in 5 second
-super + Print	
+super + Print
 	scrot -d 3 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
 
 control + Print
@@ -238,7 +238,7 @@ alt + p
 #    sh ~/.config/bspwm/scripts/start_ides.sh {code, idea, clion, pycharm, webstorm, datagrip, phpstorm, android, rider, goland}
 
 alt + control + Delete
-    i3lock-fancy
+    sh /home/keith/.scripts/lock.sh
 
 F1
   flameshot gui

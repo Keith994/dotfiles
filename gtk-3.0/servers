@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="smb://192.168.122.1/" added="2022-03-21T02:29:40.740044Z" modified="2022-03-21T02:29:40.740048Z" visited="2022-03-21T02:29:40.740046Z">
+    <title>192.168.122.1 上的 Windows 共享</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2022-03-21T02:29:40.740047Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.122.1/shared/" added="2022-03-21T02:31:44.277936Z" modified="2022-03-21T02:31:44.277940Z" visited="2022-03-21T02:31:44.277937Z">
+    <title>192.168.122.1 上的 shared</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2022-03-21T02:31:44.277938Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.122.211/shared/" added="2022-03-21T02:32:54.437202Z" modified="2022-03-21T02:32:54.437207Z" visited="2022-03-21T02:32:54.437203Z">
+    <title>192.168.122.211 上的 shared</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2022-03-21T02:32:54.437205Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.122.57/" added="2022-03-21T07:54:49.168165Z" modified="2022-03-21T07:54:49.168170Z" visited="2022-03-21T07:54:49.168166Z">
+    <title>192.168.122.57 上的 Windows 共享</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2022-03-21T07:54:49.168168Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.122.57/shared/" added="2022-03-21T08:13:18.374088Z" modified="2022-03-21T08:13:18.374091Z" visited="2022-03-21T08:13:18.374089Z">
+    <title>192.168.122.57 上的 shared</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2022-03-21T08:13:18.374089Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
