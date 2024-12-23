@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# DO NOT DELETE this file or move it!!
+# Startup file for Hyprland used by sddm
+
+# Changing the exports below is not recommended
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Hyprland
+
+# The line below may help with multiple monitors
+export WLR_EGL_NO_MODIFIERS=1
+
+# Add your own exports below this line
+export LANG=zh_CN.UTF-8
+export LC_ALL=en_US.UTF-8
+# 解决QT程序缩放问题
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# QT使用wayland和gtk
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# 使用qt5ct软件配置QT程序外观
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# 一些游戏使用wayland
+export SDL_VIDEODRIVER=wayland
+# 解决java程序启动黑屏错误
+export _JAVA_AWT_WM_NONEREPARENTING=1
+# GTK后端为 wayland和x11,优先wayland
+export GDK_BACKEND="wayland,x11"
+
+# Wayland compatibility
+# export QT_QPA_PLATFORM         DEFAULT=wayland
+export CLUTTER_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_WEBRENDER=1
+
+# FCITX input-related
+#GLFW_IM_MODULE         DEFAULT=ibus
+export GLFW_IM_MODULE=fcitx
+export INPUT_METHOD=fcitx
+export IMSETTINGS_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export SDL_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+
+# Lines below are for nvidia support
+# See the wiki for more info as some work is required
+# https://wiki.hyprland.org/hyprland-wiki/pages/Nvidia/
+export LIBVA_DRIVER_NAME=nvidia
+export WLR_NO_HARDWARE_CURSORS=1
+
+# The lines below may cause issues, proceed at your own risk
+#export GBM_BACKEND=nvidia-drm
+#export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+exec Hyprland
