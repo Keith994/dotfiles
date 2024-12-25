@@ -17,6 +17,8 @@ for sub_dir in "$dir_path"/*; do
         # 创建软链接到 ~/.config/
         if [ "$(basename "$sub_dir")" == "rime" ]; then
             ln -s "$sub_dir" "$HOME/.local/share/fcitx5/"
+        elif [ "$(basename "$sub_dir")" == "cargo" ]; then
+            ln -s "$sub_dir/config.toml" "$HOME/.cargo/"
         else
             ln -s "$sub_dir" "$configDir/"
             # echo "已创建软链接: $sub_dir -> $configDir/$(basename "$sub_dir")"

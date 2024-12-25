@@ -31,7 +31,7 @@
         "custom/power_btn"
     ],
     "include": [
-        "~/.config/HyprV/waybar/conf/hyprv-util.jsonc"
+        "~/.config/waybar/hyprv-util.jsonc"
     ],
     "hyprland/window": {
         "format": "{}"
@@ -73,13 +73,6 @@
         "tooltip-format": "Memory - {used:0.1f}GB used",
         "on-click": "kitty --title btop -e 'btop'"
     },
-    "custom/updates": {
-        "format": "{}",
-        "exec": "~/.config/HyprV/waybar/scripts/update-sys",
-        "on-click": "~/.config/HyprV/waybar/scripts/update-sys update",
-        "interval": 300,
-        "tooltip": true
-    },
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -98,14 +91,6 @@
             "9": [],
             "10": []
         }
-    },
-    "custom/weather": {
-        //shows the current weather and forecast
-        "tooltip": true,
-        "format": "{}",
-        "interval": 30,
-        "exec": "~/.config/HyprV/waybar/scripts/waybar-wttr.py",
-        "return-type": "json"
     },
     "tray": {
         "icon-size": 18,
@@ -130,8 +115,8 @@
             "󰃟",
             "󰃠"
         ],
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/brightness --inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/brightness --dec",
+        "on-scroll-up": "~/.config/hypr/scripts/brightness --inc",
+        "on-scroll-down": "~/.config/hypr/scripts/brightness --dec",
         "min-length": 6
     },
     "battery": {
@@ -161,10 +146,10 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "",
-        "on-click": "~/.config/HyprV/waybar/scripts/volume --toggle",
+        "on-click": "~/.config/hypr/scripts/volume --toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --dec",
+        "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
+        "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
@@ -184,10 +169,10 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
-        "on-click": "~/.config/HyprV/waybar/scripts/volume --toggle-mic",
+        "on-click": "~/.config/hypr/scripts/volume --toggle-mic",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --mic-inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --mic-dec",
+        "on-scroll-up": "~/.config/hypr/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/hypr/scripts/volume --mic-dec",
         "scroll-step": 5
     },
     "temperature": {

@@ -1,0 +1,18 @@
+{
+    "custom/myhyprv": {
+        //shows the current power profile and switches to next on click
+        "exec": "~/.config/waybar/hyprv_util",
+        "return-type" : "json",
+        "interval": 30,
+        "format": "{}",
+        "on-click": "~/.config/waybar/hyprv_util vswitch",
+        "tooltip": true
+    },
+
+    "custom/light_dark": {
+        "format": "󰐾",
+        "on-click": "~/.config/hypr/scripts/baraction light",
+        "tooltip": false
+    }
+
+}
