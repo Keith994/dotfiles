@@ -27,3 +27,5 @@ set -x LC_ALL "C.UTF-8"
 set -x CHEAT_USE_FZF true
 
 # set -x JAVA_HOME $(jenv javahome)
+set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
+set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
