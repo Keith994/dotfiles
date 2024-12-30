@@ -1,7 +1,7 @@
 [https]
-	proxy = socks5://127.0.0.1:1080
+	proxy = http://127.0.0.1:1080
 [http]
-	proxy = socks5://127.0.0.1:1080
+	proxy = http://127.0.0.1:1080
 [user]
 	email = wuchunhua@zj.tech
 	name = wuchunhua
@@ -20,9 +20,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
