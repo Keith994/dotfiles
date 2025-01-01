@@ -190,7 +190,7 @@
         "interface": "wlp0s20f3",
         "format": "{ifname}",
         "format-wifi": "󰁞 {bandwidthUpBytes} 󰁆 {bandwidthDownBytes}   {essid}",
-        "format-ethernet": "󰁞 {bandwidthUpBytes} 󰁆 {bandwidthDownBytes} 󰈀 {ifname}",
+        "format-ethernet": "󰁞 {bandwidthUpBytes} 󰁆 {bandwidthDownBytes} 󰈀 ",
         "format-disconnected": "󰌙 ", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
