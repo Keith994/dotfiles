@@ -52,7 +52,7 @@ deleted = "[ $count](red)"
 
 [hostname]
 ssh_only = true
-format =  "[•$hostname](bg:cyan bold fg:#f6f2ee)[](bold fg:cyan )"
+format =  "[](bold fg:cyan )[$hostname](bg:cyan bold fg:#f6f2ee)[](bold fg:cyan )"
 trim_at = ".companyname.com"
 disabled = false
 
