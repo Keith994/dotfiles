@@ -100,7 +100,7 @@
         "spacing": 5
     },
     "custom/clock": {
-        "exec": "date +' %Y/%m/%d %H:%M:%S'",
+        "exec": "date +'%Y/%m/%d %H:%M:%S'",
         "interval": 1,
         "tooltip": false,
         "on-click": "kitty --title 'calcurse' -e 'calcurse'"
