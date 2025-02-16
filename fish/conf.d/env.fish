@@ -21,7 +21,7 @@ set -x TERM xterm-256color
 set -x TERM_ITALICS true
 set -x GLFW_IM_MODULE ibus
 set -gx EDITOR /usr/bin/nvim
-set -U __done_min_cmd_duration 5000  # default: 5000 ms
+set -U __done_min_cmd_duration 5000 # default: 5000 ms
 
 set -x LC_ALL "C.UTF-8"
 set -x CHEAT_USE_FZF true
@@ -29,3 +29,4 @@ set -x CHEAT_USE_FZF true
 # set -x JAVA_HOME $(jenv javahome)
 set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
 set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
+source $HOME/ai-api.fish
