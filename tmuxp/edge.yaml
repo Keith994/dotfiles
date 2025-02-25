@@ -1,0 +1,20 @@
+session_name: dyeing-edge
+windows:
+  - window_name: business
+    panes:
+      - shell_command:
+          - cd ~/repo/dyeing-edge-go/
+          - clear
+  - window_name: collector
+    panes:
+      - shell_command:
+          - cd ~/repo/dyeing-edge-collectors/
+          - clear
+  - window_name: workorder
+    panes:
+      - shell_command:
+          - cd ~/repo/dyeing-work-order/
+          - clear
+  - window_name: misc
+    panes:
+      -

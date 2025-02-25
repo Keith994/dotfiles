@@ -1,0 +1,7 @@
+session_name: dyeing-cloud
+windows:
+  - window_name: web
+    panes:
+      - shell_command:
+          - cd ~/repo/dyeing-web/
+          - clear

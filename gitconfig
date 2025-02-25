@@ -2,6 +2,7 @@
 	proxy = http://127.0.0.1:1080
 [http]
 	proxy = http://127.0.0.1:1080
+	postBuffer = 536870912
 [user]
 	email = wuchunhua@zj.tech
 	name = wuchunhua
@@ -15,8 +16,16 @@
 ; 	hooksPath = /home/keith/.local/bin/git-hooks/
 [pull]
 	rebase = false
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+; [filter "lfs"]
+; 	clean = git-lfs clean -- %f
+; 	smudge = git-lfs smudge -- %f
+; 	process = git-lfs filter-process
+; 	required = true
+; [credential "https://github.com"]
+; 	helper = 
+; 	helper = !/usr/bin/gh auth git-credential
+; [credential "https://gist.github.com"]
+; 	helper = 
+; 	helper = !/usr/bin/gh auth git-credential
+[core]
+	bigFileThreshold = 52428800

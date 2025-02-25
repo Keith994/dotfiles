@@ -1,37 +1,37 @@
 [[plugin.deps]]
 use = "Rolv-Apneseth/bypass"
-rev = "6c5414f"
+rev = "ecb1f7f"
 hash = "905054b2df08ff79af223e0b6f249fa3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
-rev = "beb586a"
-hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
+rev = "5186af7"
+hash = "a8025f2bb311e869069364fba01abffc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "beb586a"
+rev = "5186af7"
 hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "beb586a"
+rev = "5186af7"
 hash = "af11685de39c366ec1137fcbccacdbff"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "beb586a"
+rev = "5186af7"
 hash = "771f18427fb75fb19990ce602bb322f4"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "beb586a"
+rev = "5186af7"
 hash = "aef2b1a805b80cce573bb766f1459d88"
 
 [[plugin.deps]]
 use = "Reledia/hexyl"
-rev = "39d3d4e"
-hash = "dd624cbaff94af65f39fd86bc57b340"
+rev = "228a9ef"
+hash = "cdc65cfe4e60e1bf5afe5769d074fa9c"
 
 [flavor]
 deps = []
