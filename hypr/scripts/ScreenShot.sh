@@ -22,59 +22,59 @@ notify_cmd_NOT="notify-send -u low -i ${iDoR}/ja.png "
 
 # notify and view screenshot
 notify_view() {
-    if [[ "$1" == "active" ]]; then
-        if [[ -e "${active_window_path}" ]]; then
-			"${sDIR}/Sounds.sh" --screenshot        
-            resp=$(timeout 5 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
-            case "$resp" in
-				action1)
-					xdg-open "${active_window_path}" &
-					;;
-				action2)
-					rm "${active_window_path}" &
-					;;
+	if [[ "$1" == "active" ]]; then
+		if [[ -e "${active_window_path}" ]]; then
+			"${sDIR}/Sounds.sh" --screenshot
+			resp=$(timeout 5 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
+			case "$resp" in
+			action1)
+				xdg-open "${active_window_path}" &
+				;;
+			action2)
+				rm "${active_window_path}" &
+				;;
 			esac
-        else
-            ${notify_cmd_NOT} " Screenshot of:" " ${active_window_class} NOT Saved."
-            "${sDIR}/Sounds.sh" --error
-        fi
+		else
+			${notify_cmd_NOT} " Screenshot of:" " ${active_window_class} NOT Saved."
+			"${sDIR}/Sounds.sh" --error
+		fi
 
-    elif [[ "$1" == "swappy" ]]; then
+	elif [[ "$1" == "swappy" ]]; then
 		"${sDIR}/Sounds.sh" --screenshot
 		resp=$(${notify_cmd_shot} " Screenshot:" " Captured by Swappy")
 		case "$resp" in
-			action1)
-				swappy -f - <"$tmpfile"
-				;;
-			action2)
-				rm "$tmpfile"
-				;;
+		action1)
+			swappy -f - <"$tmpfile"
+			;;
+		action2)
+			rm "$tmpfile"
+			;;
 		esac
 
-    else
-        local check_file="${dir}/${file}"
-        if [[ -e "$check_file" ]]; then
-            "${sDIR}/Sounds.sh" --screenshot
-            resp=$(timeout 5 ${notify_cmd_shot} " Screenshot" " Saved")
+	else
+		local check_file="${dir}/${file}"
+		if [[ -e "$check_file" ]]; then
+			"${sDIR}/Sounds.sh" --screenshot
+			resp=$(timeout 5 ${notify_cmd_shot} " Screenshot" " Saved")
 			case "$resp" in
-				action1)
-					xdg-open "${check_file}" &
-					;;
-				action2)
-					rm "${check_file}" &
-					;;
+			action1)
+				xdg-open "${check_file}" &
+				;;
+			action2)
+				rm "${check_file}" &
+				;;
 			esac
-        else
-            ${notify_cmd_NOT} " Screenshot" " NOT Saved"
-            "${sDIR}/Sounds.sh" --error
-        fi
-    fi
+		else
+			${notify_cmd_NOT} " Screenshot" " NOT Saved"
+			"${sDIR}/Sounds.sh" --error
+		fi
+	fi
 }
 
 # countdown
 countdown() {
 	for sec in $(seq $1 -1 1); do
-		notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png  " Taking shot" " in: $sec secs"
+		notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png " Taking shot" " in: $sec secs"
 		sleep 1
 	done
 }
@@ -117,18 +117,22 @@ shotarea() {
 }
 
 shotactive() {
-    active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
-    active_window_file="Screenshot_${time}_${active_window_class}.png"
-    active_window_path="${dir}/${active_window_file}"
+	active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
+	active_window_file="Screenshot_${time}_${active_window_class}.png"
+	active_window_path="${dir}/${active_window_file}"
 
-    hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - "${active_window_path}"
+	hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - "${active_window_path}"
 	sleep 1
-    notify_view "active"
+	notify_view "active"
 }
 
 shotswappy() {
 	tmpfile=$(mktemp)
-	grim -g "$(slurp)" - >"$tmpfile" && notify_view "swappy"
+	grim -g "$(slurp)" - >"$tmpfile"
+	if [[ -s "$tmpfile" ]]; then
+		wl-copy <"$tmpfile"
+	fi
+	notify_view "swappy"
 }
 
 if [[ ! -d "$dir" ]]; then

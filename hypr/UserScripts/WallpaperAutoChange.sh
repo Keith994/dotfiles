@@ -9,9 +9,10 @@
 
 wallust_refresh=$HOME/.config/hypr/scripts/RefreshNoWaybar.sh
 
-focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+# focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+all_monitors=($(hyprctl monitors | awk '/^Monitor/{print $2}'))
 
-if [[ $# -lt 1 ]] || [[ ! -d $1   ]]; then
+if [[ $# -lt 1 ]] || [[ ! -d $1 ]]; then
 	echo "Usage:
 	$0 <dir containing images>"
 	exit 1
@@ -25,15 +26,18 @@ export SWWW_TRANSITION_TYPE=simple
 INTERVAL=1800
 
 while true; do
-	find "$1" \
-		| while read -r img; do
+	find "$1" |
+		while read -r img; do
 			echo "$((RANDOM % 1000)):$img"
-		done \
-		| sort -n | cut -d':' -f2- \
-		| while read -r img; do
-			swww img -o $focused_monitor "$img" 
+		done |
+		sort -n | cut -d':' -f2- |
+		while read -r img; do
+			for monitor in "${all_monitors[@]}"; do
+				swww img -o "$monitor" "$img"
+			done
+			# swww img -o $focused_monitor "$img"
 			$wallust_refresh
 			sleep $INTERVAL
-			
+
 		done
 done

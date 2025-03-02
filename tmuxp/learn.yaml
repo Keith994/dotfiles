@@ -1,0 +1,12 @@
+session_name: learn
+windows:
+  - window_name: rs
+    panes:
+      - shell_command:
+          - cd ~/repo/playground/rust/
+          - clear
+  - window_name: github
+    panes:
+      - shell_command:
+          - cd ~/repo/github.com/
+          - clear

@@ -1,0 +1,12 @@
+session_name: logs
+windows:
+  - window_name: qa2
+    panes:
+      - shell_command:
+          - cd ~
+          - clear
+  - window_name: product
+    panes:
+      - shell_command:
+          - cd ~
+          - clear
