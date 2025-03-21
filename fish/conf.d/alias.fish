@@ -47,8 +47,11 @@ alias bc calc
 alias j11 'jenv local 11.0.9.1'
 alias j17 'jenv local openjdk64-17.0.13'
 alias redis-cli 'reds\{6\}-cli'
+alias redis 'reds\{6\}-cli'
+alias td tldr
 
 alias tdyeing 'tmux attach-session -t dyeing-edge'
+alias tedge 'tmux attach-session -t dyeing-edge'
 alias tlogs 'tmux attach-session -t logs'
 alias tcloud 'tmux attach-session -t dyeing-cloud'
 alias tconfig 'tmux attach-session -t configs'
