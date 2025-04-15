@@ -1,3 +1,8 @@
+[[manager.prepend_keymap]]
+on   = "<A-d>"
+run  = "plugin diff"
+desc = "Diff the selected with the hovered file"
+
 [manager]
 keymap = [
 	# { on = "L", run = "plugin bypass", desc = "Recursively enter child directory, skipping children with only a single subdirectory" },
@@ -7,7 +12,7 @@ keymap = [
 	# { on = "H", run = "plugin bypass reverse", desc = "Recursively enter parent directory, skipping parents with only a single subdirectory" },
 	{ on = "<Left>", run = "leave", desc = "Go back to the parent directory" },
 	{ on = "<Right>", run = "enter", desc = "Enter the child directory" },
-	{ on = "P", run = "plugin max-preview", desc = "Maximize or restore preview" },
+	{ on = "P", run = "plugin toggle-pane max-preview", desc = "Maximize or restore preview" },
 	{ on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 	{ on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = "<C-g>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
