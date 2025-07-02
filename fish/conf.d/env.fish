@@ -29,4 +29,6 @@ set -x CHEAT_USE_FZF true
 # set -x JAVA_HOME $(jenv javahome)
 set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
 set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
+set -x LUAJIT_ENABLE_GC64 1
+set -x LUAJIT_DISABLE_JIT 0
 source $HOME/ai-api.fish

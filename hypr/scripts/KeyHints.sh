@@ -29,7 +29,7 @@ GDK_BACKEND=$BACKEND yad \
 "" "" "" \
 " enter" "Terminal" "(kitty)" \
 " SHIFT enter" "DropDown Terminal" "(Not available in Debian and Ubuntu)" \
-" B" "Launch Browser" "(Default browser)" \
+" B" "Open Bottom" \
 " A" "Desktop Overview" "(AGS - if opted to install)" \
 " D" "Application Launcher" "(rofi-wayland)" \
 " E" "Open File Manager" "(Thunar)" \

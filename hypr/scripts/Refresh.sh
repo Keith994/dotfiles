@@ -8,9 +8,9 @@ UserScripts=$HOME/.config/hypr/UserScripts
 # Define file_exists function
 file_exists() {
     if [ -e "$1" ]; then
-        return 0  # File exists
+        return 0 # File exists
     else
-        return 1  # File does not exist
+        return 1 # File does not exist
     fi
 }
 
@@ -23,16 +23,20 @@ for _prs in "${_ps[@]}"; do
 done
 
 # added since wallust sometimes not applying
-killall -SIGUSR2 waybar 
+killall -SIGUSR2 waybar
 killall -SIGUSR2 swaync
 
 # quit ags & relaunch ags
-#ags -q && ags &
+ags -q && ags &
 
 # some process to kill
 for pid in $(pidof waybar rofi swaync ags swaybg); do
     kill -SIGUSR1 "$pid"
 done
+
+# for pid in $(pgrep -f WallpaperAutoChange); do
+#     kill -SIGUSR1 "$pid"
+# done
 
 #Restart waybar
 sleep 1
@@ -40,12 +44,19 @@ waybar &
 
 # relaunch swaync
 sleep 0.5
-swaync > /dev/null 2>&1 &
+swaync >/dev/null 2>&1 &
+
+# sleep 1
+# if file_exists "${UserScripts}/WallpaperAutoChange.sh"; then
+#     wallDIR=$HOME/Pictures/wallpapers
+#     ${UserScripts}/WallpaperAutoChange.sh $wallDIR &
+# fi
 
 # Relaunching rainbow borders if the script exists
 sleep 1
 if file_exists "${UserScripts}/RainbowBorders.sh"; then
     ${UserScripts}/RainbowBorders.sh &
 fi
+
 
 exit 0
