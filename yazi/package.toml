@@ -38,5 +38,10 @@ use = "yazi-rs/plugins:diff"
 rev = "63f9650"
 hash = "47865a70cade14a0b9b6bc6a54f16bdb"
 
+[[plugin.deps]]
+use = "cap153/skim"
+rev = "e0075e6"
+hash = "2554be904c7dc95544599b846e2aafb4"
+
 [flavor]
 deps = []
