@@ -48,10 +48,10 @@ while true; do
 			done
 			# swww img -o $focused_monitor "$img"
 			$wallust_refresh
-			sleep 1
-			if file_exists "${UserScripts}/RainbowBorders.sh"; then
-				${UserScripts}/RainbowBorders.sh &
-			fi
+			# sleep 1
+			# if file_exists "${UserScripts}/RainbowBorders.sh"; then
+			# 	${UserScripts}/RainbowBorders.sh &
+			# fi
 			sleep $INTERVAL
 
 		done
