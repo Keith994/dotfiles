@@ -1,0 +1,12 @@
+session_name: configs
+windows:
+  - window_name: config
+    panes:
+      - shell_command:
+          - cd ~/.config
+          - clear
+  - window_name: hypr
+    panes:
+      - shell_command:
+          - cd ~/.config/hypr/
+          - clear
