@@ -168,16 +168,13 @@
 // NUMBERS and ICONS style with window rewrite 
 "hyprland/workspaces#rw": {
 	"disable-scroll": true,
-	"all-outputs": true,
+	"all-outputs": false,
 	"warp-on-scroll": false,
 	"sort-by-number": true,
 	"show-special": false,
 	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
-	"persistent-workspaces": {
-		"*": 5
-	  },
 	"format": "{icon} {windows}",
 	"format-window-separator": " ",
 	"window-rewrite-default": " ",
@@ -188,6 +185,8 @@
 		"title<.*Picture-in-Picture.*>": " ",
 		"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
 		"title<.*致景科技.*>": "󰡡 ",
+		"title<.*飞书.*>": "󰡡 ",
+		"class<.*Logseq.*>": "Logseq",
 		"class<redis-gui>": " ",
 		"class<DBeaver.*>": " ",
 		"class<kitty|konsole>": " ",
